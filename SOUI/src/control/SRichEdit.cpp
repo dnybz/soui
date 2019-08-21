@@ -3,7 +3,7 @@
 #include "SApp.h"
 #include "helper/SMenu.h"
 #include "helper/SplitString.h"
-#include "helper/mybuffer.h"
+#include "helper/SBuffer.h"
 #include <gdialpha.h>
 #include <WinSCard.h>
 

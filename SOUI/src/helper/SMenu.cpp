@@ -1,7 +1,7 @@
 ﻿#include "souistd.h"
 #include "SApp.h"
 #include "helper/SMenu.h"
-#include "helper/mybuffer.h"
+#include "helper/SBuffer.h"
 #include "helper/SplitString.h"
 #include "gdialpha.h"
 #include <souicoll.h>

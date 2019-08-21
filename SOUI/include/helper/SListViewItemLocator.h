@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "interface/LvItemLocator-i.h"
-#include "control/stree.hpp"
+#include "control/STree.h"
 
 namespace SOUI
 {

@@ -1,5 +1,5 @@
 ﻿#include "souistd.h"
-#include "event/NotifyCenter.h"
+#include "event/SNotifyCenter.h"
 
 namespace SOUI{
 

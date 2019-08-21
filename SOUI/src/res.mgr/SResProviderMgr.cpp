@@ -3,7 +3,7 @@
 #include "res.mgr/SResProvider.h"
 
 
-#include "helper/mybuffer.h"
+#include "helper/SBuffer.h"
 #include "helper/SplitString.h"
 
 namespace SOUI

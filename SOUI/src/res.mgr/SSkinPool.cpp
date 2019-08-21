@@ -2,7 +2,7 @@
 #include "res.mgr/SSkinPool.h"
 #include "core/Sskin.h"
 #include "SApp.h"
-#include "helper/mybuffer.h"
+#include "helper/SBuffer.h"
 #include "helper/SDpiScale.h"
 
 namespace SOUI

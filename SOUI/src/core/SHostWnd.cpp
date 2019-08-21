@@ -2,10 +2,10 @@
 
 #include "SApp.h"
 #include "core/shostwnd.h"
-#include "helper/mybuffer.h"
-#include "helper/color.h"
+#include "helper/SBuffer.h"
+#include "helper/SColor.h"
 #include "helper/SplitString.h"
-#include "helper/copylist.hpp"
+#include "helper/SCopyList.h"
 
 #include "../updatelayeredwindow/SUpdateLayeredWindow.h"
 

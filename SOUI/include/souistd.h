@@ -72,7 +72,7 @@
 #include <soui-version.h>
 #include <SApp.h>
 #include <helper/SAttrCracker.h>
-#include <helper/color.h>
+#include <helper/SColor.h>
 #include <helper/slog.h>
 #include <helper/slog-def.h>
 #include <res.mgr/sfontpool.h>

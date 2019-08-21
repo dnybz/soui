@@ -13,8 +13,8 @@
 
 #pragma once
 #include "core/SWnd.h"
-#include "core/Accelerator.h"
-#include "core/FocusManager.h"
+#include "core/SAccelerator.h"
+#include "core/SFocusManager.h"
 
 namespace SOUI
 {
@@ -196,7 +196,7 @@ protected:
      *
      * Describe  处理加速键响应消息
      */
-    virtual bool OnAcceleratorPressed(const CAccelerator& accelerator);
+    virtual bool OnAcceleratorPressed(const SAccelerator& accelerator);
     virtual BOOL InitFromXml(pugi::xml_node xmlNode);
 protected:
     

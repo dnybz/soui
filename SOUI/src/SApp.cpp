@@ -8,9 +8,9 @@
 
 #include "helper/STimerEx.h"
 #include "helper/SScriptTimer.h"
-#include "helper/mybuffer.h"
+#include "helper/SBuffer.h"
 #include "helper/SToolTip.h"
-#include "helper/AppDir.h"
+#include "helper/SAppDir.h"
 #include "helper/SwndFinder.h"
 
 #include "control/Smessagebox.h"

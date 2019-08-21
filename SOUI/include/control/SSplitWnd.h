@@ -11,8 +11,8 @@
  * Describe     
  */
 #pragma once
-#include <core/swnd.h>
-#include <helper/copylist.hpp>
+#include <core/SWnd.h>
+#include <helper/SCopyList.h>
 #include <layout/slayoutsize.h>
 
 namespace SOUI

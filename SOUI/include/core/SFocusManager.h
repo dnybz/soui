@@ -12,9 +12,9 @@
 */
 
 #pragma once
-#include "core/Swnd.h"
-#include "Accelerator.h"
-#include "helper/copylist.hpp"
+#include "core/SWnd.h"
+#include "SAccelerator.h"
+#include "helper/SCopyList.h"
 
 namespace SOUI
 {
@@ -22,7 +22,7 @@ namespace SOUI
 
     // FocusSearch is an object that implements the algorithm to find the
     // next view to focus.
-    class FocusSearch
+    class SFocusSearch
     {
     public:
 
@@ -37,8 +37,8 @@ namespace SOUI
         // - |accessibility_mode| should be true if full keyboard accessibility is
         //   needed and you  want to check IsAccessibilityFocusableInRootView(),
         //   rather than IsFocusableInRootView().
-        FocusSearch(SWindow * root, bool cycle);
-        virtual ~FocusSearch() {}
+        SFocusSearch(SWindow * root, bool cycle);
+        virtual ~SFocusSearch() {}
 
         // Finds the next view that should be focused and returns it. If a
         // FocusTraversable is found while searching for the focusable view,
@@ -162,11 +162,11 @@ namespace SOUI
         // - the enter key
         // - any F key (F1, F2, F3 ...)
         // - any browser specific keys (as available on special keyboards)
-        void RegisterAccelerator(const CAccelerator& accelerator,
+        void RegisterAccelerator(const SAccelerator& accelerator,
             IAcceleratorTarget* target);
 
         // Unregister the specified keyboard accelerator for the specified target.
-        void UnregisterAccelerator(const CAccelerator& accelerator,
+        void UnregisterAccelerator(const SAccelerator& accelerator,
             IAcceleratorTarget* target);
 
         // Unregister all keyboard accelerator for the specified target.
@@ -178,7 +178,7 @@ namespace SOUI
         // this method immediately returns. If not, we do the same thing on the next
         // target, and so on.
         // Returns true if an accelerator was activated.
-        bool ProcessAccelerator(const CAccelerator& accelerator);
+        bool ProcessAccelerator(const SAccelerator& accelerator);
     private:
         // Returns the next focusable view.
         SWindow * GetNextFocusableView(SWindow* pWndStarting, bool bReverse, bool bLoop);
@@ -199,7 +199,7 @@ namespace SOUI
         SWindow *m_pOwner;
 
         typedef SList<IAcceleratorTarget*> AcceleratorTargetList;
-        typedef SMap<CAccelerator, AcceleratorTargetList> AcceleratorMap;
+        typedef SMap<SAccelerator, AcceleratorTargetList> AcceleratorMap;
         AcceleratorMap accelerators_;
 
     };

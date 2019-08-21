@@ -1,6 +1,6 @@
 ﻿#include "souistd.h"
 #include "helper/auto_reset.h"
-#include "core/FocusManager.h"
+#include "core/SFocusManager.h"
 #include "core/SWindowMgr.h"
 
 # pragma warning(disable:4800)
@@ -8,13 +8,13 @@
 namespace SOUI
 {
 
-    FocusSearch::FocusSearch( SWindow * root, bool cycle )
+    SFocusSearch::SFocusSearch( SWindow * root, bool cycle )
         : root_(root),cycle_(cycle)
     {
 
     }
 
-    SWindow* FocusSearch::FindNextFocusableView( SWindow* starting_view, bool reverse, bool check_starting_view )
+    SWindow* SFocusSearch::FindNextFocusableView( SWindow* starting_view, bool reverse, bool check_starting_view )
     {
         if(root_->GetChildrenCount()==0) return NULL;
 
@@ -61,7 +61,7 @@ namespace SOUI
     //   FindNextFocusableViewImpl on that view).
     // - if the view has no right sibling, go up the parents until you find a parent
     //   with a right sibling and start the search from there.
-    SWindow* FocusSearch::FindNextFocusableViewImpl( SWindow* starting_view, bool check_starting_view, bool can_go_up, bool can_go_down , SWindow * pSkipGroupOwner)
+    SWindow* SFocusSearch::FindNextFocusableViewImpl( SWindow* starting_view, bool check_starting_view, bool can_go_up, bool can_go_down , SWindow * pSkipGroupOwner)
     {
         if(check_starting_view)
         {
@@ -134,7 +134,7 @@ namespace SOUI
     // - start the search on the left sibling.
     // - if there are no left sibling, start the search on the parent (without going
     //   down).
-    SWindow* FocusSearch::FindPreviousFocusableViewImpl( SWindow* starting_view, bool check_starting_view, bool can_go_up, bool can_go_down, SWindow * pSkipGroupOwner )
+    SWindow* SFocusSearch::FindPreviousFocusableViewImpl( SWindow* starting_view, bool check_starting_view, bool can_go_up, bool can_go_down, SWindow * pSkipGroupOwner )
     {
         if(can_go_down)
         {//find the last focusable window
@@ -171,14 +171,14 @@ namespace SOUI
         return NULL;
     }
 
-    bool FocusSearch::IsViewFocusableCandidate( SWindow* v,SWindow *pGroupOwner )
+    bool SFocusSearch::IsViewFocusableCandidate( SWindow* v,SWindow *pGroupOwner )
     {
         if(! IsFocusable(v) ) return false;
         if(pGroupOwner && v->IsSiblingsAutoGroupped() && v->GetParent()==pGroupOwner) return false;
         return true;
     }
 
-    bool FocusSearch::IsFocusable( SWindow* view )
+    bool SFocusSearch::IsFocusable( SWindow* view )
     {
         if(!view) return false;
         return view->IsFocusable() && view->IsVisible(TRUE) && !view->IsDisabled(TRUE);
@@ -242,7 +242,7 @@ namespace SOUI
             return TRUE;
         }
         // Process keyboard accelerators.
-        CAccelerator accelerator(vKey,GetKeyState(VK_CONTROL)&0x8000,GetKeyState(VK_MENU)&0x8000,GetKeyState(VK_SHIFT)&0x8000);
+        SAccelerator accelerator(vKey,GetKeyState(VK_CONTROL)&0x8000,GetKeyState(VK_MENU)&0x8000,GetKeyState(VK_SHIFT)&0x8000);
         if(ProcessAccelerator(accelerator))
         {
             // If a shortcut was activated for this keydown message, do not propagate
@@ -268,7 +268,7 @@ namespace SOUI
     SWindow * CFocusManager::GetNextFocusableView( SWindow* original_starting_view, bool bReverse, bool bLoop )
     {
         
-        FocusSearch fs(m_pOwner,bLoop);
+        SFocusSearch fs(m_pOwner,bLoop);
         return fs.FindNextFocusableView(original_starting_view,bReverse,false);
     }
 
@@ -366,13 +366,13 @@ namespace SOUI
         focused_backup_ = 0;
     }
 
-    void CFocusManager::RegisterAccelerator( const CAccelerator& accelerator, IAcceleratorTarget* target )
+    void CFocusManager::RegisterAccelerator( const SAccelerator& accelerator, IAcceleratorTarget* target )
     {
         AcceleratorTargetList& targets = accelerators_[accelerator];
         targets.AddHead(target);
     }
 
-    void CFocusManager::UnregisterAccelerator( const CAccelerator& accelerator, IAcceleratorTarget* target )
+    void CFocusManager::UnregisterAccelerator( const SAccelerator& accelerator, IAcceleratorTarget* target )
     {
         if(!accelerators_.Lookup(accelerator)) return;
         AcceleratorTargetList* targets=&accelerators_[accelerator];
@@ -392,7 +392,7 @@ namespace SOUI
         }
     }
 
-    bool CFocusManager::ProcessAccelerator( const CAccelerator& accelerator )
+    bool CFocusManager::ProcessAccelerator( const SAccelerator& accelerator )
     {
         if(!accelerators_.Lookup(accelerator)) return false;
 

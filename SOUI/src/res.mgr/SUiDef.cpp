@@ -1,7 +1,7 @@
 ﻿#include "include\souistd.h"
 #include "res.mgr\SUiDef.h"
 #include "helper\SplitString.h"
-#include "helper\mybuffer.h"
+#include "helper\SBuffer.h"
 
 namespace SOUI{
 

@@ -1,6 +1,6 @@
 #pragma once
 #include <oleacc.h>
-#include <helper/unknown.h>
+#include <helper/SUnknown.h>
 #include "Swnd.h"
 #include "interface/sacchelper-i.h"
 

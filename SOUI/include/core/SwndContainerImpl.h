@@ -2,7 +2,7 @@
 * Copyright (C) 2014-2050 
 * All rights reserved.
 * 
-* @file       SwndContainerImpl.h
+* @file       SWndContainerImpl.h
 * @brief      
 * @version    v1.0      
 * @author     SOUI group   
@@ -14,7 +14,7 @@
 #pragma  once
 
 #include "SDropTargetDispatcher.h"
-#include "FocusManager.h"
+#include "SFocusManager.h"
 
 namespace SOUI
 {

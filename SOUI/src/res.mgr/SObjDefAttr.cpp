@@ -1,7 +1,7 @@
 ﻿#include "souistd.h"
 #include "res.mgr/SObjDefAttr.h"
 #include "SApp.h"
-#include "helper/mybuffer.h"
+#include "helper/SBuffer.h"
 
 namespace SOUI
 {

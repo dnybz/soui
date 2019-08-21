@@ -14,7 +14,7 @@
 #include "helper/swndspy.h"
 #include "helper/SScriptTimer.h"
 #include "core/SCaret.h"
-#include "core/hostmsg.h"
+#include "core/SHostMsgDef.h"
 #include "layout/slayoutsize.h"
 #include "helper/SplitString.h"
 

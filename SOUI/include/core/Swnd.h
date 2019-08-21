@@ -20,8 +20,8 @@
 #include "helper/SwndMsgCracker.h"
 #include "layout/SLayoutSize.h"
 #include "event/EventSubscriber.h"
-#include "event/events.h"
-#include "event/EventSet.h"
+#include "event/Events.h"
+#include "event/SEventSet.h"
 #include "res.mgr/SStylePool.h"
 #include "res.mgr/SSkinPool.h"
 #include "SwndStyle.h"
@@ -183,7 +183,7 @@ namespace SOUI
         friend class SWindowRepos;
         friend class SHostWnd;
         friend class SwndContainerImpl;
-        friend class FocusSearch;
+        friend class SFocusSearch;
     public:
         SWindow();
 

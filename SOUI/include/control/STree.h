@@ -16,8 +16,9 @@
  *                       2.2  2008-10-16 修改一个遍历接口的问题
  *                       2.3  2011-10-17 将数据释放的接口从回调函数改成虚函数
  */
-#if !defined(AFX_STREE_H__D2332B4E_2C7E_4357_BE22_EC55BF496C1C__INCLUDED_)
-#define AFX_STREE_H__D2332B4E_2C7E_4357_BE22_EC55BF496C1C__INCLUDED_
+
+#ifndef STREE_H
+#define STREE_H
 
 #if _MSC_VER > 1000
 #pragma once
@@ -687,4 +688,4 @@ protected:
     HSTREENODE  m_hRootLast;   /**< 最后一个根节点 */
 };
 
-#endif // !defined(AFX_STREE_H__D2332B4E_2C7E_4357_BE22_EC55BF496C1C__INCLUDED_)
+#endif // STREE_H
